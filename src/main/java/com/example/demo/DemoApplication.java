@@ -13,6 +13,7 @@ import org.springframework.context.annotation.PropertySources;
 public class DemoApplication {
 
     public static void main(String[] args) {
+        System.out.println("项目启动");
         SpringApplication.run(DemoApplication.class, args);
     }
 

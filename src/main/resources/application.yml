@@ -1,0 +1,21 @@
+demo:
+  hi: 你好
+  hello: hello
+  test: ${demo.hello},${demo.hi}
+  num1: ${random.int(20)}
+
+
+#debug: true
+
+#spring:
+#  output:
+#    ansi:
+#      enabled: detect      #如果设备支出ANSI,则采用多彩输出方式打印日志
+
+#logging:
+#  file:
+#    path: my.log      #保存在当前项目根目录下`
+logging:
+#  file:
+#   path: /var/log     #保存在项目所在盘根目录
+  level.com.example.demo.controller.TestController: WARN        #指定logger的输出级别

@@ -19,3 +19,16 @@ logging:
 #  file:
 #   path: /var/log     #保存在项目所在盘根目录
   level.com.example.demo.controller.TestController: WARN        #指定logger的输出级别
+
+validationQuery: select 1
+mysql:
+  driver: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://192.168.6.41:3306/test?useUnicode=true&characterEncoding=UTF-8
+  username: mysql
+  password: nJDNZtWsJJdftbYGrVOB
+  maxActive: 20
+
+spring:
+  main:
+    #当遇到同样名字的时候，是否允许覆盖注册
+    allow-bean-definition-overriding: true

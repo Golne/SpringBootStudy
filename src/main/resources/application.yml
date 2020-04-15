@@ -4,7 +4,6 @@ demo:
   test: ${demo.hello},${demo.hi}
   num1: ${random.int(20)}
 
-
 #debug: true
 
 #spring:
@@ -16,8 +15,8 @@ demo:
 #  file:
 #    path: my.log      #保存在当前项目根目录下`
 logging:
-#  file:
-#   path: /var/log     #保存在项目所在盘根目录
+  #  file:
+  #   path: /var/log     #保存在项目所在盘根目录
   level.com.example.demo.controller.TestController: WARN        #指定logger的输出级别
 
 validationQuery: select 1
@@ -32,3 +31,7 @@ spring:
   main:
     #当遇到同样名字的时候，是否允许覆盖注册
     allow-bean-definition-overriding: true
+
+# 开启swagger
+swagger:
+  enabled: true

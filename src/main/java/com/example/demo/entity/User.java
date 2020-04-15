@@ -1,24 +1,24 @@
 package com.example.demo.entity;
 
-import java.util.Date;
 import com.baomidou.mybatisplus.activerecord.Model;
-import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotations.Version;
-
+import com.example.demo.enums.StatusEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+import java.util.Date;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zhong
  * @since 2020-04-14
  */
 @Data
+@EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 public class User extends Model<User> {
 
@@ -27,7 +27,7 @@ public class User extends Model<User> {
     /**
      * 唯一标示
      */
-    private Long id;
+    private int id;
     /**
      * 编码
      */
@@ -39,7 +39,7 @@ public class User extends Model<User> {
     /**
      * 状态 1启用 0 停用
      */
-    private String status;
+    private StatusEnum status;
     /**
      * 创建时间
      */

@@ -18,7 +18,7 @@
     </settings>
     <typeHandlers>
         <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
-                     javaType="com.example.demo.entity.StatusEnum"/>
+                     javaType="com.example.demo.enums.StatusEnum"/>
     </typeHandlers>
     <plugins>
         <!-- SQL 执行性能分析，开发环境使用，线上不推荐。 -->

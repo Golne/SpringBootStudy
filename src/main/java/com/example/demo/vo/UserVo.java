@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
@@ -16,7 +17,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @ApiModel
-public class UserVo {
+public class UserVo implements Serializable {
+    private static final long serialVersionUID = 1069403935532325254L;
     /**
      * 唯一标示
      */

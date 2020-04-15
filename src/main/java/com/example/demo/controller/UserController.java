@@ -10,6 +10,8 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -64,6 +66,7 @@ public class UserController {
      */
     @ApiOperation(value = "用户修改")
     @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @CacheEvict(value = "zhongfangwei", key = "#userVo.id")
     public Map<String, String> updateUser(@Valid @RequestBody UserVo userVo) throws Exception {
         Map<String, String> map = new HashMap<>();
 
@@ -88,6 +91,7 @@ public class UserController {
     @ApiOperation(value = "用户查询（ID）")
     @ApiImplicitParam(name = "id", value = "查询", required = true)
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    @Cacheable(value = "zhongfangwei", key = "#id")
     public Map<String, Object> selectUser(@PathVariable("id") String id) throws Exception {
         Map<String, Object> result = new HashMap<String, Object>();
         User user = userService.selectUserById(id);
